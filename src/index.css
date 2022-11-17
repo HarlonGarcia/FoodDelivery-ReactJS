@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Mont-Heavy";
+  src: url("./assets/fonts/MontDemo-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Mont-Light";
+  src: url("./assets/fonts/MontDemo-ExtraLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("./assets/fonts/coolvetica.ttf") format("truetype");
+}
