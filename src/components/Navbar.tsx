@@ -1,9 +1,11 @@
 import React from "react";
+import { MdFastfood } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <header className="flex items-center px-4 h-20 bg-orange text-white font-mont">
-      <h1>Bem vindo ao Food Delivery</h1>
+    <header className="flex items-center px-4 h-20 mb-8 bg-orange text-white font-abril">
+      <MdFastfood className="w-5 h-5 mb-1 mr-2 text-orange-200" />
+      <h1 className="text-lg">Bem vindo ao Food Delivery</h1>
     </header>
   );
 };

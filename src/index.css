@@ -3,16 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Mont-Heavy";
-  src: url("./assets/fonts/MontDemo-Heavy.otf") format("opentype");
+  font-family: "Abril";
+  src: url("./assets/fonts/AbrilFatface-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Mont-Light";
-  src: url("./assets/fonts/MontDemo-ExtraLight.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Coolvetica";
-  src: url("./assets/fonts/coolvetica.ttf") format("truetype");
+  font-family: "OpenSans";
+  src: url("./assets/fonts/OpenSans.ttf") format("truetype");
 }

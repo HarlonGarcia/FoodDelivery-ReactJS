@@ -4,20 +4,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mont: ["Mont-Heavy", "sans-serif"],
-        "mont-light": ["Mont-Light", "sans-serif"],
-        coolvetica: ["Coolvetica", "sans-serif"],
+        open: ["OpenSans", "sans-serif"],
+        abril: ["abril", "sans-serif"],
       },
-    },
-    fontSize: {
-      "10xl": "10rem",
-      "11xl": "12.5rem",
-      "12xl": "15rem",
-      "13xl": "18rem",
     },
     colors: {
       orange: {
         DEFAULT: "#FF5700",
+        100: "#CC4400",
+        200: "#B03400",
       },
       beige: {
         DEFAULT: "#FFE8D2",
@@ -26,8 +21,8 @@ module.exports = {
         DEFAULT: "#F2F2F2",
       },
       black: {
-        DEFAULT: "#0D0D0D",
-        100: "#262626",
+        DEFAULT: "#262626",
+        100: "#0D0D0D",
       },
       green: {
         DEFAULT: "#27CC27",
