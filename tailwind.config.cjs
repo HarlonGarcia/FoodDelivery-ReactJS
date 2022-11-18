@@ -4,8 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        open: ["OpenSans", "sans-serif"],
-        abril: ["abril", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        nanum: ["Nanum-Regular", "serif"],
+        nanumbold: ["Nanum-Bold", "serif"],
+        nanumblack: ["Nanum-ExtraBold", "serif"],
       },
     },
     colors: {
@@ -16,6 +18,8 @@ module.exports = {
       },
       beige: {
         DEFAULT: "#FFE8D2",
+        100: "#DF8D46",
+        200: "#8E3A16",
       },
       white: {
         DEFAULT: "#F2F2F2",

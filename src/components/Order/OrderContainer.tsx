@@ -1,6 +1,4 @@
-import React from "react";
 import { Order as OrderType } from "../../types/Order";
-import Order from "./Order";
 import OrderBoard from "./OrderBoard";
 
 const OrderContainer = () => {
@@ -69,11 +67,21 @@ const OrderContainer = () => {
 
   return (
     <div className="flex flex-col items-center mb-8">
-      <h2 className="mb-8 w-fit text-2xl font-bold text-orange-200">Pedidos</h2>
-      <div className="flex gap-6">
-        <OrderBoard title="Esperando" icon="⏰" orders={orders} />
-        <OrderBoard title="Em preparação" icon="🔥" orders={orders} />
-        <OrderBoard title="Feito" icon="✔" orders={orders} />
+      <h2 className="mb-8 w-fit text-2xl font-bold text-orange-200">PEDIDOS</h2>
+      <div className="flex gap-6 w-full">
+        <OrderBoard
+          title="Esperando"
+          icon="⏰"
+          status="WAITING"
+          orders={orders}
+        />
+        <OrderBoard
+          title="Em preparação"
+          icon="🔥"
+          status="IN_PRODUCTION"
+          orders={orders}
+        />
+        <OrderBoard title="Feito" icon="✔" status="DONE" orders={orders} />
       </div>
     </div>
   );
