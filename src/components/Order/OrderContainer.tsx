@@ -1,8 +1,8 @@
-import { Order as OrderType } from "../../types/Order";
+import { Order } from "../../types/Order";
 import OrderBoard from "./OrderBoard";
 
 const OrderContainer = () => {
-  const orders: OrderType[] = [
+  const orders: Order[] = [
     {
       _id: "aaaaaaa",
       user: {
@@ -14,6 +14,7 @@ const OrderContainer = () => {
           reference: "Do lado da Rua 2",
         },
       },
+      createdAt: new Date(),
       status: "WAITING",
       products: [
         {
@@ -39,6 +40,7 @@ const OrderContainer = () => {
           reference: "Do lado da Rua 91",
         },
       },
+      createdAt: new Date(),
       status: "DONE",
       products: [
         {
@@ -48,7 +50,7 @@ const OrderContainer = () => {
             name: "Hamburger",
             description: "Muito bom",
             image_url: "url/aqui/",
-            price: 20,
+            price: 20.5,
           },
         },
         {
@@ -58,7 +60,7 @@ const OrderContainer = () => {
             name: "Hamburger",
             description: "Muito bom",
             image_url: "url/aqui/",
-            price: 20,
+            price: 51.3,
           },
         },
       ],
@@ -67,7 +69,9 @@ const OrderContainer = () => {
 
   return (
     <div className="flex flex-col items-center mb-8">
-      <h2 className="mb-8 w-fit text-2xl font-bold text-orange-200">PEDIDOS</h2>
+      <h2 className="mb-8 w-fit text-2xl font-interbold font-black text-orange-200">
+        PEDIDOS
+      </h2>
       <div className="flex gap-6 w-full">
         <OrderBoard
           title="Esperando"

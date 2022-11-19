@@ -9,15 +9,16 @@ export interface Order {
       reference: string;
     };
   };
+  createdAt: Date;
   status: string;
   products: {
     _id: string;
-    quantity: Number;
+    quantity: number;
     product: {
       name: string;
       description: string;
       image_url: string;
-      price: Number;
+      price: number;
     };
   }[];
 }

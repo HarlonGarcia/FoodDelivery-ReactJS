@@ -8,16 +8,11 @@
 }
 
 @font-face {
-  font-family: "Nanum-Bold";
-  src: url("./assets/fonts/NanumMyeongjo-Bold.ttf") format("truetype");
+  font-family: "Inter-Bold";
+  src: url("./assets/fonts/Inter-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Nanum-ExtraBold";
-  src: url("./assets/fonts/NanumMyeongjo-ExtraBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum-Regular";
-  src: url("./assets/fonts/NanumMyeongjo-Regular.ttf") format("truetype");
+  font-family: "Fredoka";
+  src: url("./assets/fonts/FredokaOne-Regular.ttf") format("truetype");
 }

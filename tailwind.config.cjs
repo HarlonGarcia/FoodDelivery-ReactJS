@@ -5,9 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        nanum: ["Nanum-Regular", "serif"],
-        nanumbold: ["Nanum-Bold", "serif"],
-        nanumblack: ["Nanum-ExtraBold", "serif"],
+        interbold: ["Inter-Bold", "sans-serif"],
+        fredoka: ["Fredoka", "serif"],
       },
     },
     colors: {
