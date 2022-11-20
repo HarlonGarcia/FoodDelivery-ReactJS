@@ -17,12 +17,13 @@ const OrderBoard = ({ title, icon, status, orders }: OrderBoardProps) => {
     <div
       className={`${
         currentStatus === status ? "block" : "hidden"
-      } w-full flex flex-col items-center font-interbold text-black sm:block`}
+      } w-full flex flex-col items-center font-interbold text-center text-black sm:block sm:w-fit`}
     >
-      <h2 className="mb-2 w-fit text-lg font-bold">{title + " " + icon}</h2>
-      <div className="flex w-full flex-col gap-3">
-        {orders.map(({ user, createdAt, status, products }, index) => (
+      <h2 className="mb-2 text-lg font-bold">{title + " " + icon}</h2>
+      <div className="flex flex-col items-center w-full gap-3 sm:w-fit">
+        {orders.map(({ _id, user, createdAt, status, products }, index) => (
           <Order
+            _id={_id}
             key={index}
             user={user}
             createdAt={createdAt}

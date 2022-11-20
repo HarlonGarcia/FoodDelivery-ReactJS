@@ -10,7 +10,7 @@ export interface Order {
     };
   };
   createdAt: Date;
-  status: string;
+  status: "WAITING" | "IN_PRODUCTION" | "DONE";
   products: {
     _id: string;
     quantity: number;
