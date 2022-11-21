@@ -36,6 +36,7 @@ const Order = (props: OrderProps) => {
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const date = new Date(props.createdAt);
   const total = props.products.reduce((total, { quantity, product }) => {
     return total + product.price * quantity;
   }, 0);
@@ -46,7 +47,6 @@ const Order = (props: OrderProps) => {
 
   const handleStatusChange = async () => {
     const status = props.status === "WAITING" ? "IN_PRODUCTION" : "DONE";
-    console.log(props._id, status);
 
     await api.patch(`/orders/${props._id}`, { status });
 
@@ -77,7 +77,7 @@ const Order = (props: OrderProps) => {
         onStatusChange={handleStatusChange}
       />
       <button
-        className="relative overflow-hidden h-36 max-w-[24rem] min-w-[16rem] w-2/3 flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter sm:max-w-none"
+        className="relative overflow-hidden h-36 w-full flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter sm:max-w-none"
         onClick={handleOpenModal}
       >
         <div className="flex flex-col p-4 pb-2">
@@ -101,7 +101,7 @@ const Order = (props: OrderProps) => {
           </h3>
         </div>
         <div className="absolute bottom-0 w-full h-10 flex justify-between items-center px-4 bg-beige-200">
-          <h3>{"Oi"}</h3>
+          <h3>{date.toLocaleTimeString("pt-BR")}</h3>
           <h3>{props.user.name}</h3>
         </div>
       </button>

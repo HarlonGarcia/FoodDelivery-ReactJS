@@ -52,7 +52,7 @@ const OrderModal = ({
           <small className="opacity-80 sm:text-sm">Itens</small>
           <div className="mt-1.5">
             {order.products.map(({ _id, quantity, product }) => (
-              <div key={_id} className="flex text-sm sm:text-base">
+              <div key={_id} className="flex text-sm mb-2 sm:text-base">
                 <div className="w-12 h-10 overflow-hidden rounded-md mr-1.5 sm:mr-3 sm:w-14 sm:h-12">
                   <img
                     src={`http://localhost:3001/uploads/${product.image_url}`}
@@ -97,7 +97,7 @@ const OrderModal = ({
             disabled={isLoading}
             onClick={onCancel}
           >
-            Cancelar pedido
+            {order.status === "DONE" ? "Excluir pedido" : "Cancelar pedido"}
           </button>
         </div>
       </div>

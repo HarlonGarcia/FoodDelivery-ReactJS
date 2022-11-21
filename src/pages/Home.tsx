@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main>
       <Navbar />
-      <div className="w-5/6 mx-auto">
+      <div className="w-5/6 mx-auto mt-28">
         <OrderContainer />
       </div>
       <Footer />

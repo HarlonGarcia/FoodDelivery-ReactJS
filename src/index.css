@@ -16,3 +16,16 @@
   font-family: "Fredoka";
   src: url("./assets/fonts/FredokaOne-Regular.ttf") format("truetype");
 }
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: theme('colors.orange.DEFAULT');
+}
+
+*::-webkit-scrollbar-thumb {
+  /* border-radius: 10px; */
+  background-color: theme('colors.orange.200');
+}
