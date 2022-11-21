@@ -8,9 +8,18 @@ interface OrderBoardProps {
   icon: string;
   status: string;
   orders: OrderType[];
+  onCancelOrder: (orderId: string) => void;
+  onStatusChange: (orderId: string, status: OrderType["status"]) => void;
 }
 
-const OrderBoard = ({ title, icon, status, orders }: OrderBoardProps) => {
+const OrderBoard = ({
+  title,
+  icon,
+  status,
+  orders,
+  onCancelOrder,
+  onStatusChange,
+}: OrderBoardProps) => {
   const { currentStatus } = useContext(StatusContext);
 
   return (
@@ -29,6 +38,8 @@ const OrderBoard = ({ title, icon, status, orders }: OrderBoardProps) => {
             createdAt={createdAt}
             status={status}
             products={products}
+            onCancel={onCancelOrder}
+            onStatusChange={onStatusChange}
           />
         ))}
       </div>

@@ -6,9 +6,19 @@ interface OrderModalProps {
   visible: Boolean;
   order: Order;
   onClose: () => void;
+  onCancel: () => Promise<void>;
+  isLoading: boolean;
+  onStatusChange: () => void;
 }
 
-const OrderModal = ({ visible, order, onClose }: OrderModalProps) => {
+const OrderModal = ({
+  visible,
+  order,
+  onClose,
+  onCancel,
+  isLoading,
+  onStatusChange,
+}: OrderModalProps) => {
   const total = order.products.reduce((total, { quantity, product }) => {
     return total + product.price * quantity;
   }, 0);
@@ -66,14 +76,29 @@ const OrderModal = ({ visible, order, onClose }: OrderModalProps) => {
         </div>
 
         <div className="flex flex-col text-sm sm:text-base xl:text-lg">
+          {order.status !== "DONE" ? (
+            <button
+              type="button"
+              className="w-full flex items-center justify-center gap-2 p-2 mb-3
+            rounded-full bg-black text-white disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={false}
+              onClick={onStatusChange}
+            >
+              <span>{order.status === "WAITING" ? "🔥" : "✅"}</span>
+              <span>
+                {order.status === "WAITING"
+                  ? "Iniciar produção"
+                  : "Concluir pedido"}
+              </span>
+            </button>
+          ) : null}
           <button
-            type="button"
-            className="w-full flex items-center justify-center gap-2 p-2 mb-3 rounded-full bg-black text-white"
+            className="text-red font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isLoading}
+            onClick={onCancel}
           >
-            <span>🔥</span>
-            <span>Iniciar preparação</span>
+            Cancelar pedido
           </button>
-          <button className="text-red font-bold">Cancelar pedido</button>
         </div>
       </div>
     </div>
