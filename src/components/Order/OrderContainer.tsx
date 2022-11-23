@@ -52,7 +52,6 @@ const OrderContainer = () => {
       <div className="w-full flex flex-wrap justify-center gap-6 lg:gap-10">
         <OrderBoard
           title="Fila de espera"
-          icon="⏰"
           status="WAITING"
           orders={waitingOrders}
           onCancelOrder={handleCancelOrder}
@@ -60,7 +59,6 @@ const OrderContainer = () => {
         />
         <OrderBoard
           title="Em preparação"
-          icon="🔥"
           status="IN_PRODUCTION"
           orders={inProductionOrders}
           onCancelOrder={handleCancelOrder}
@@ -68,7 +66,6 @@ const OrderContainer = () => {
         />
         <OrderBoard
           title="Feito"
-          icon="✅"
           status="DONE"
           orders={finishedOrders}
           onCancelOrder={handleCancelOrder}

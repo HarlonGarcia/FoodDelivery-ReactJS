@@ -23,12 +23,27 @@ const OrderModal = ({
     return total + product.price * quantity;
   }, 0);
 
+  const newPhone = "83998282880";
+
   if (!visible || !order) return null;
   return (
     <div className="fixed left-0 top-0 z-40 w-full h-full flex items-center justify-center bg-black-100/80 backdrop-blur-sm">
       <div className="bg-white min-w-[18rem] max-w-[30rem] w-2/3 h-fit p-8 rounded-md text-left text-black font-inter xl:max-w-[38rem]">
         <header className="flex items-center justify-between mb-4 lg:text-lg">
-          <strong>{order.user.name}</strong>
+          <div className="flex flex-col">
+            <strong>{order.user.name}</strong>
+            <div className="flex flex-col sm:flex-row">
+              <small className="text-orange sm:text-black">
+                {order.user.address.street + ", " + order.user.address.number}
+              </small>
+              <span className="text-[#999] mx-2">|</span>
+              <small>
+                {newPhone
+                  .toString()
+                  .replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1) $2 $3-$4")}
+              </small>
+            </div>
+          </div>
           <button onClick={onClose}>
             <img src={close} alt="close button" className="lg:w-7" />
           </button>
@@ -53,7 +68,7 @@ const OrderModal = ({
           <div className="mt-1.5">
             {order.products.map(({ _id, quantity, product }) => (
               <div key={_id} className="flex text-sm mb-2 sm:text-base">
-                <div className="w-12 h-10 overflow-hidden rounded-md mr-1.5 sm:mr-3 sm:w-14 sm:h-12">
+                <div className="min-w-[3rem] w-12 h-10 overflow-hidden rounded-md mr-1.5 sm:mr-3 sm:w-14 sm:h-12">
                   <img
                     src={`http://localhost:3001/uploads/${product.image_url}`}
                     alt={product.name}
@@ -61,7 +76,7 @@ const OrderModal = ({
                   />
                 </div>
                 <span className="mr-1.5 sm:mr-2">{quantity}x</span>
-                <div className="flex flex-col">
+                <div className="flex truncate flex-col">
                   <strong className="truncate">{product.name}</strong>
                   <span>{formatCurrency(product.price)}</span>
                 </div>

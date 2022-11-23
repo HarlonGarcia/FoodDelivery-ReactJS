@@ -3,9 +3,12 @@ import { StatusContext } from "../../context/StatusContext";
 import { Order as OrderType } from "../../types/Order";
 import Order from "./Order";
 
+import { TbToolsKitchen } from "react-icons/tb";
+import { RiTimerLine } from "react-icons/ri";
+import { BiCheckCircle } from "react-icons/bi";
+
 interface OrderBoardProps {
   title: string;
-  icon: string;
   status: string;
   orders: OrderType[];
   onCancelOrder: (orderId: string) => void;
@@ -14,7 +17,6 @@ interface OrderBoardProps {
 
 const OrderBoard = ({
   title,
-  icon,
   status,
   orders,
   onCancelOrder,
@@ -26,9 +28,16 @@ const OrderBoard = ({
     <div
       className={`${
         currentStatus === status ? "block" : "hidden"
-      } w-full min-w-[15rem] min-h-[16rem] h-fit flex flex-col items-center font-inter bg-white rounded-md p-6 text-center text-black sm:block sm:w-3/12 sm:min-w-[18rem]`}
+      } w-full min-w-[15rem] min-h-[16rem] h-fit flex flex-col items-center font-inter bg-white mb-8 rounded-md p-6 text-center text-black sm:block sm:w-52`}
     >
-      <h2 className="mb-4 text-lg font-interbold">{title + " " + icon}</h2>
+      <div className="flex items-center justify-center mb-4">
+        <strong className="text-lg font-interbold mr-2">{title + " "}</strong>
+        <span>
+          {status === "WAITING" && <RiTimerLine className="w-5 h-5" />}
+          {status === "IN_PRODUCTION" && <TbToolsKitchen className="w-5 h-5" />}
+          {status === "DONE" && <BiCheckCircle className="w-5 h-5" />}
+        </span>
+      </div>
       <div className="flex flex-col items-center w-full h-full gap-3 pb-6">
         {orders.length === 0 ? (
           <small className="text-[#666] mt-16">

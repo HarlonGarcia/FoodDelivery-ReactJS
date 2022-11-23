@@ -3,6 +3,7 @@ export interface Order {
   user: {
     _id: string;
     name: string;
+    phone: string;
     address: {
       street: string;
       number: string;

@@ -10,6 +10,7 @@ interface OrderProps {
   user: {
     _id: string;
     name: string;
+    phone: string;
     address: {
       street: string;
       number: string;
@@ -77,15 +78,15 @@ const Order = (props: OrderProps) => {
         onStatusChange={handleStatusChange}
       />
       <button
-        className="relative overflow-hidden h-36 w-full flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter sm:max-w-none"
+        className="relative overflow-hidden h-36 w-full flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter"
         onClick={handleOpenModal}
       >
-        <div className="flex flex-col p-4 pb-2">
+        <div className="w-full flex flex-col box-border p-4 pb-2">
           <h3 className="w-fit text-sm font-interbold text-beige-200">
             {props.products.length}
             {props.products.length > 1 ? " itens" : " item"}:
           </h3>
-          <p className="w-fit max-w-[80%] truncate text-md mb-3">
+          <p className="truncate text-md mb-3">
             {props.products.map((order, index) => {
               let current = order.quantity + "x " + order.product.name;
               if (index !== props.products.length - 1) {
