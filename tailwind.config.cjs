@@ -18,7 +18,7 @@ module.exports = {
       beige: {
         DEFAULT: "#FFE8D2",
         100: "#DF8D46",
-        200: "#8E3A16",
+        200: "#730202",
       },
       white: {
         DEFAULT: "#F2F2F2",
