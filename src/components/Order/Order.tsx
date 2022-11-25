@@ -78,7 +78,7 @@ const Order = (props: OrderProps) => {
         onStatusChange={handleStatusChange}
       />
       <button
-        className="relative overflow-hidden h-36 w-full flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter"
+        className="relative overflow-hidden min-h-[9rem] w-full flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter"
         onClick={handleOpenModal}
       >
         <div className="w-full flex flex-col box-border p-4 pb-2">
