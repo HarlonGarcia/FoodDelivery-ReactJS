@@ -28,7 +28,7 @@ const OrderBoard = ({
     <div
       className={`${
         currentStatus === status ? "block" : "hidden"
-      } overflow-hidden w-full h-[27rem] min-w-[15rem] flex flex-col items-center font-inter bg-white mb-8 rounded-md p-6 text-center text-black sm:block sm:w-52`}
+      } overflow-hidden w-full h-[27rem] min-w-[15rem] flex flex-col items-center font-inter shadow-xl shadow-black/30 bg-white mb-8 rounded-md p-6 text-center text-black sm:block sm:w-52`}
     >
       <div className="flex items-center justify-center mb-4">
         <strong className="text-lg font-interbold mr-2">{title + " "}</strong>
@@ -38,24 +38,27 @@ const OrderBoard = ({
           {status === "DONE" && <BiCheckCircle className="w-5 h-5" />}
         </span>
       </div>
-      <div className="overflow-x-hidden overflow-y-auto box-content pr-3 scroll-mb-12 w-full h-full flex flex-col items-center gap-3 pb-6">
+
+      <div className="w-full h-full flex flex-col items-center pb-12">
         {orders.length === 0 ? (
           <small className="text-[#666] mt-16">
             Não há itens aqui <span className="ml-1">{":("}</span>
           </small>
         ) : null}
-        {orders.map(({ _id, user, createdAt, status, products }, index) => (
-          <Order
-            _id={_id}
-            key={index}
-            user={user}
-            createdAt={createdAt}
-            status={status}
-            products={products}
-            onCancel={onCancelOrder}
-            onStatusChange={onStatusChange}
-          />
-        ))}
+        <div className="overflow-x-hidden overflow-y-auto box-content pr-1 flex flex-col gap-3 w-full">
+          {orders.map(({ _id, user, createdAt, status, products }, index) => (
+            <Order
+              _id={_id}
+              key={index}
+              user={user}
+              createdAt={createdAt}
+              status={status}
+              products={products}
+              onCancel={onCancelOrder}
+              onStatusChange={onStatusChange}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

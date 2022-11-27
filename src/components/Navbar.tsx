@@ -1,4 +1,3 @@
-import React from "react";
 import { MdFastfood } from "react-icons/md";
 
 const Navbar = () => {
