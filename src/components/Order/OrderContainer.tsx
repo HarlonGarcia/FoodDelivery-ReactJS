@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-import socketIo from "socket.io-client";
+import { socket } from "../../utils/socket";
 import { api } from "../../utils/api";
 import { Order } from "../../types/Order";
 import OrderBoard from "./OrderBoard";
 
 const OrderContainer = () => {
   const [orders, setOrders] = useState<Order[]>([]);
+  console.log("oi");
 
   useEffect(() => {
-    const socket = socketIo("http://localhost:3001", {
-      transports: ["websocket"],
-    });
-
-    // return () => socket.emit('end');
-    // Test if return will stop the double rendering
-
-    socket.on("orders@new", (order) => {
+    const addOrder = (order: Order) => {
       setOrders((prevState) => prevState.concat(order));
-    });
+    };
+
+    socket.on("orders@new", addOrder);
+
+    return () => {
+      socket.off("orders@new", addOrder);
+    };
   }, []);
 
   useEffect(() => {
