@@ -28,7 +28,7 @@ const OrderBoard = ({
     <div
       className={`${
         currentStatus === status ? "block" : "hidden"
-      } overflow-hidden w-full h-[27rem] min-w-[15rem] flex flex-col items-center font-inter shadow-xl shadow-black/30 bg-white mb-8 rounded-md p-6 text-center text-black sm:block sm:w-52`}
+      } overflow-hidden w-full h-96 min-w-[15rem] flex flex-col items-center font-inter shadow-xl shadow-black/30 bg-white mb-8 rounded-md p-6 text-center text-black sm:block sm:h-[27rem] sm:w-52`}
     >
       <div className="flex items-center justify-center mb-4">
         <strong className="text-lg font-interbold mr-2">{title + " "}</strong>

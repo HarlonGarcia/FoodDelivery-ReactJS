@@ -49,7 +49,7 @@ const OrderContainer = () => {
 
   return (
     <div className="flex flex-col items-center h-[80vh]">
-      <h2 className="w-fit mb-8 text-xl font-interbold font-black text-beige-200">
+      <h2 className="w-fit text-xl font-interbold font-black text-beige-200 mb-3 sm:mb-6">
         PEDIDOS
       </h2>
       <div className="w-full flex flex-wrap justify-center gap-6 lg:gap-10">
