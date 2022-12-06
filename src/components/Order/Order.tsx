@@ -81,7 +81,7 @@ const Order = (props: OrderProps) => {
         className="relative overflow-hidden min-h-[9rem] w-full flex flex-col bg-beige-100 rounded-md cursor-pointer text-white font-inter"
         onClick={handleOpenModal}
       >
-        <div className="w-full flex flex-col box-border p-4 pb-2">
+        <div className="w-full flex flex-col box-border text-left p-4 pb-2">
           <h3 className="w-fit text-sm font-interbold text-beige-200">
             {props.products.length}
             {props.products.length > 1 ? " itens" : " item"}:
@@ -102,7 +102,7 @@ const Order = (props: OrderProps) => {
           </h3>
         </div>
         <div className="absolute bottom-0 w-full h-10 flex justify-between items-center px-4 bg-beige-200">
-          <h3>{date.toLocaleTimeString("pt-BR")}</h3>
+          <h3>{date.getHours() + "h" + date.getMinutes() + "min"}</h3>
           <h3>{props.user.name}</h3>
         </div>
       </button>
