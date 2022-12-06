@@ -23,8 +23,6 @@ const OrderModal = ({
     return total + product.price * quantity;
   }, 0);
 
-  const newPhone = "83998282880";
-
   if (!visible || !order) return null;
   return (
     <div className="fixed left-0 top-0 z-40 w-full h-full flex items-center justify-center bg-black-100/80 backdrop-blur-sm">
@@ -36,12 +34,16 @@ const OrderModal = ({
               <small className="text-orange sm:text-black">
                 {order.user.address.street + ", " + order.user.address.number}
               </small>
-              <span className="text-[#999] mx-2">|</span>
-              <small>
-                {newPhone
-                  .toString()
-                  .replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1) $2 $3-$4")}
-              </small>
+              {order.user.phone ? (
+                <>
+                  <span className="hidden text-[#999] mx-2 sm:block">|</span>
+                  <small>
+                    {order.user.phone
+                      ?.toString()
+                      .replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1) $2 $3-$4")}
+                  </small>
+                </>
+              ) : null}
             </div>
           </div>
           <button onClick={onClose}>
